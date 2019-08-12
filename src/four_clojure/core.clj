@@ -22,3 +22,15 @@
 (= (count-seq "Hello World") 11)
 (= (count-seq '(13)) 1)
 (= (count-seq '(13)) 1)
+
+;Write a function which reverses a sequence.
+(defn reverse-seq
+  [arr]
+  (into '() arr))
+
+(reverse-seq [5 4 3 2 1])
+(reverse-seq (sorted-set 5 7 2 7))
+(= (reverse-seq [1 2 3 4 5]) [5 4 3 2 1])
+(= (reverse-seq (sorted-set 5 7 2 7)) '(7 5 2))
+(= (reverse-seq [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
+
