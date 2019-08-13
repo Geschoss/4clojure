@@ -34,3 +34,13 @@
 (= (reverse-seq (sorted-set 5 7 2 7)) '(7 5 2))
 (= (reverse-seq [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
 
+;Write a function which returns the sum of a sequence of numbers.
+(defn my-sum
+  [arr]
+  (reduce + 0 arr))
+
+(= (my-sum [1 2 3]) 6)
+(= (my-sum (list 0 -2 5 5)) 8)
+(= (my-sum (list 0 -2 5 5)) 8)
+(= (my-sum '(0 0 -1)) -1)
+(= (my-sum '(1 10 3)) 14)
