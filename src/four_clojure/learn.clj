@@ -40,13 +40,3 @@
 
 ;; bot derives default-brain
 (defmulti run-cmd (fn [bot cmd] (:brain bot)))
-
-;; Write a function which returns only the odd numbers from a sequence.
-(defn odd
-  [arr]
-  (filter #(> (rem % 2) 0) arr))
-
-(= (odd #{1 2 3 4 5}) '(1 3 5))
-(= (odd [4 2 1 6]) '(1))
-(= (odd [2 2 4 6]) '())
-(= (odd [2 2 4 6]) '())

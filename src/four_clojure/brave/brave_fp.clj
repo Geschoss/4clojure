@@ -1,5 +1,6 @@
 (ns four-clojure.brave.brave-fp)
 (require '[clojure.string :as s])
+
 (+ 1 2)
 
 (defn wisdom
@@ -20,8 +21,6 @@
 (let [great-baby-name "Bloodthunder"]
   great-baby-name)
 
-(let my-null nil)
-
 (defn sum
   ([vals] (sum vals 0))
   ([vals accumulating-total]
@@ -37,6 +36,33 @@
 
 (clean "My boa constrictor is so sassy lol! ")
 
+
+((comp inc *) 2 3)
+
+(def character
+  {:name "Smooches McCutes"
+   :attributes {:intelligence 10
+                :strength 4
+                :dexterity 5}})
+(def s-int (comp :intelligence :attributes))
+(def s-str (comp :strength :attributes))
+(def s-dex (comp :dexterity :attributes))
+
+(s-int character)
+(s-str character)
+(s-dex character)
+
+(def spell-slots-comp (comp int inc #(/ % 2) s-int))
+(spell-slots-comp character)
+
+(defn my-comp
+  ([f] identity)
+  ([f g]
+   (fn [& args]
+     (f (apply g args)))))
+
+(def m-s-int (my-comp :intelligence :attributes))
+(m-s-int character)
 
 
 
